@@ -860,6 +860,13 @@ with tab4:
             )
         )
 
+    st.markdown("### 4. Data Distribution (Density Plot)")
+    fig, ax = plt.subplots(figsize=(10, 5))
+    sns.kdeplot(data=filtered_df, x=selected_variable, hue="City", fill=True, ax=ax, common_norm=False)
+    ax.set_title(f"{selected_variable} Distribution/Density by City")
+    st.pyplot(fig, use_container_width=True)
+    plt.close(fig)
+
 
 # ============================================================
 # TAB 5 — FINDINGS
